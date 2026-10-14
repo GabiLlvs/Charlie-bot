@@ -4,7 +4,7 @@ Bot de stickers para WhatsApp.
 
 Recibís una **foto** o **GIF** (también video corto) y el bot responde con un **sticker** WebP 512×512.
 
-Pensado para el número **+5492613417054** (Argentina). La sesión se vincula escaneando un QR desde ese teléfono.
+Pensado para el número **+54** (Argentina). La sesión se vincula escaneando un QR desde ese teléfono.
 
 ## Requisitos
 
