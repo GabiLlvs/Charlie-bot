@@ -48,3 +48,16 @@ BOT_PHONE=5492613417054
 ## Alternativa con n8n
 
 Si ya tenés **WhatsApp Business Cloud** en Meta y n8n, podés usar el trigger **WhatsApp Trigger** + descarga de media + un servicio HTTP que ejecute esta misma lógica de conversión. Este repo es la forma más rápida de probar con tu número personal sin configurar Meta.
+
+## Docker
+
+Build multi-stage sobre `node:24-alpine`. Las dependencias se instalan con `--ignore-scripts` y se usa el `ffmpeg` de Alpine en vez del binario que descarga `ffmpeg-static`. El contenedor corre como usuario sin privilegios, con filesystem read-only.
+
+```bash
+docker compose up -d --build
+docker compose logs -f charlie-bot   # escanear el QR la primera vez
+```
+
+- La sesión se guarda en el volumen `charlie_bot_data` (`/app/data/auth_info`). Para re-vincular: `docker compose down -v`.
+- No expone puertos: el bot solo abre una conexión saliente hacia WhatsApp.
+- Para ajustes locales (redes, límites) usá un `docker-compose.override.yml`, que está ignorado por git.
