@@ -8,6 +8,10 @@ Bitácora del proyecto (más reciente arriba). Completar en el mismo cambio que 
 
 ## 2026-10-18 — `dev`
 
+- Landing estática de portfolio en `portfolio/`, independiente del bot y sin dependencias adicionales.
+
+## 2026-10-18 — `dev`
+
 - Rama `dev` en origin como integración / test. `main` queda para stage / producción.
 - Features y fixes de ahora en más nacen de `dev` y vuelven a `dev` por PR; promoción a `main` cuando esté estable.
 - Arranque de skills personales (Cursor) y de esta bitácora para no perder contexto al crecer.

@@ -56,6 +56,12 @@ BOT_PHONE=5492613417054
 
 Si ya tenés **WhatsApp Business Cloud** en Meta y n8n, podés usar el trigger **WhatsApp Trigger** + descarga de media + un servicio HTTP que ejecute esta misma lógica de conversión. Este repo es la forma más rápida de probar con tu número personal sin configurar Meta.
 
+## Landing de portfolio
+
+La presentación visual del proyecto está en [`portfolio/`](portfolio/), separada del bot: es HTML y CSS estáticos, no agrega dependencias y no participa del proceso de WhatsApp. Para verla, abrí `portfolio/index.html` en el navegador.
+
+La landing es un caso de estudio del bot; no ofrece una demo conectada ni convierte imágenes en el navegador.
+
 ## Docker
 
 Build multi-stage sobre `node:24-alpine`. Las dependencias se instalan con `--ignore-scripts` y se usa el `ffmpeg` de Alpine en vez del binario que descarga `ffmpeg-static`. El contenedor corre como usuario sin privilegios, con filesystem read-only.

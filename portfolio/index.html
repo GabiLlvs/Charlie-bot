@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Charlie-bot convierte fotos, GIFs y videos cortos en stickers de WhatsApp. Un proyecto personal hecho con Node.js y Baileys."
+    >
+    <meta name="theme-color" content="#f4f1e9">
+    <title>Charlie-bot — De una imagen a un sticker</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="Charlie-bot, inicio">
+        <span class="wordmark-mark" aria-hidden="true">C</span>
+        <span>charlie<span class="wordmark-light">-bot</span></span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#detras-del-bot">Detrás del bot</a>
+      </nav>
+      <span class="project-label"><span class="status-dot"></span> Proyecto personal</span>
+    </header>
+
+    <main>
+      <section class="hero section-wrap" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> Un proyecto para WhatsApp</p>
+          <h1>De una imagen,<br>un sticker <span>con onda.</span></h1>
+          <p class="hero-intro">
+            Charlie-bot transforma fotos, GIFs y videos cortos en stickers
+            WebP listos para compartir. Le mandás el contenido por WhatsApp;
+            el bot hace el resto.
+          </p>
+          <a class="text-link" href="#como-funciona">
+            Conocé el proyecto <span aria-hidden="true">↓</span>
+          </a>
+          <div class="hero-meta">
+            <span>Node.js</span><span>Baileys</span><span>FFmpeg</span>
+          </div>
+        </div>
+
+        <div class="demo-stage" aria-label="Ilustración del flujo de Charlie-bot">
+          <img
+            class="charlie-mascot"
+            src="./images/charlie-mascot.png"
+            alt="Charlie, una criatura verde sentada en su silla de oficina"
+            width="768"
+            height="768"
+          >
+          <span class="mascot-caption">él es Charlie <span aria-hidden="true">↙</span></span>
+          <div class="stage-note note-top">de imagen a sticker <span>✳</span></div>
+          <div class="chat-card">
+            <div class="chat-topbar">
+              <span class="chat-avatar">C</span>
+              <span><strong>Charlie-bot</strong><small>siempre listo para crear</small></span>
+              <span class="chat-menu" aria-hidden="true">···</span>
+            </div>
+            <div class="chat-body">
+              <div class="chat-date">HOY, 10:42</div>
+              <div class="incoming-photo">
+                <div class="photo-sun"></div>
+                <div class="photo-hill hill-back"></div>
+                <div class="photo-hill hill-front"></div>
+                <div class="photo-sparkle" aria-hidden="true">✦</div>
+              </div>
+              <div class="message-time">una foto para convertir <span>10:42</span></div>
+              <div class="sticker-reply" aria-label="Sticker creado: un sol sonriente">
+                <svg viewBox="0 0 160 160" role="img" aria-labelledby="sticker-title">
+                  <title id="sticker-title">Sol sonriente convertido en sticker</title>
+                  <g class="sun-rays" fill="#ffb84d">
+                    <path d="M75 5h10v24H75zM75 131h10v24H75zM5 75h24v10H5zM131 75h24v10h-24z"/>
+                    <path d="m25 28 7-7 17 17-7 7zM111 114l7-7 17 17-7 7zM25 132l17-17 7 7-17 17zM111 39l17-17 7 7-17 17z"/>
+                  </g>
+                  <circle cx="80" cy="80" r="49" fill="#ffd166" stroke="#23312b" stroke-width="5"/>
+                  <circle cx="64" cy="73" r="4" fill="#23312b"/>
+                  <circle cx="96" cy="73" r="4" fill="#23312b"/>
+                  <path d="M64 91q16 17 32 0" fill="none" stroke="#23312b" stroke-linecap="round" stroke-width="5"/>
+                  <path d="m42 55-8-7m84 7 8-7" fill="none" stroke="#f48668" stroke-linecap="round" stroke-width="6"/>
+                </svg>
+              </div>
+              <div class="message-time reply-time">listo para compartir <span>10:42</span></div>
+            </div>
+            <div class="chat-compose"><span>Mensaje</span><span class="send-icon" aria-hidden="true">↑</span></div>
+          </div>
+          <div class="stage-note note-bottom"><span class="note-star">✳</span> 512 × 512 px</div>
+          <div class="stage-scribble" aria-hidden="true">↗</div>
+        </div>
+      </section>
+
+      <section class="process-section" id="como-funciona">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow eyebrow-light"><span>02</span> Simple por diseño</p>
+            <h2>Un mensaje entra.<br><span>Un sticker vuelve.</span></h2>
+          </div>
+          <div class="steps" aria-label="Pasos para usar Charlie-bot">
+            <article class="step">
+              <span class="step-number">01</span>
+              <div class="step-icon icon-send" aria-hidden="true">↗</div>
+              <h3>Mandá una imagen</h3>
+              <p>Enviá una foto, GIF o video corto al chat donde está el bot.</p>
+            </article>
+            <article class="step">
+              <span class="step-number">02</span>
+              <div class="step-icon icon-magic" aria-hidden="true">✳</div>
+              <h3>El bot la convierte</h3>
+              <p>El medio se adapta a formato WebP cuadrado, de hasta 512 × 512.</p>
+            </article>
+            <article class="step">
+              <span class="step-number">03</span>
+              <div class="step-icon icon-sticker" aria-hidden="true">☺</div>
+              <h3>Recibí tu sticker</h3>
+              <p>En unos segundos vuelve al chat, listo para compartir.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-section section-wrap" id="detras-del-bot">
+        <div class="details-intro">
+          <p class="eyebrow"><span>03</span> Detrás del bot</p>
+          <h2>Pequeño proyecto.<br><span>Decisiones reales.</span></h2>
+          <p>
+            Una automatización personal para explorar integración con
+            WhatsApp, procesamiento de medios y despliegue en contenedores.
+          </p>
+        </div>
+        <div class="details-grid">
+          <article class="detail-card">
+            <span class="detail-index">01 / INTEGRACIÓN</span>
+            <h3>WhatsApp + Baileys</h3>
+            <p>Conexión mediante dispositivo vinculado y sesión persistente.</p>
+          </article>
+          <article class="detail-card">
+            <span class="detail-index">02 / PROCESAMIENTO</span>
+            <h3>Sharp + FFmpeg</h3>
+            <p>Fotos y medios animados se convierten a stickers WebP.</p>
+          </article>
+          <article class="detail-card">
+            <span class="detail-index">03 / DESPLIEGUE</span>
+            <h3>Docker</h3>
+            <p>Imagen multi-stage, usuario sin privilegios y datos persistentes.</p>
+          </article>
+          <article class="detail-card detail-note">
+            <span class="detail-index">NOTA DEL PROYECTO</span>
+            <p>
+              Baileys es una librería no oficial. El bot procesa los medios en
+              el entorno donde se ejecuta; no es una conversión local en el
+              navegador.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing-band">
+        <div class="section-wrap closing-content">
+          <p>Hecho para convertir ese “esto sería un buen sticker” en realidad.</p>
+          <a href="#inicio" aria-label="Volver al inicio">Volver arriba <span aria-hidden="true">↑</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="wordmark footer-wordmark" href="#inicio">
+        <span class="wordmark-mark" aria-hidden="true">C</span>
+        <span>charlie<span class="wordmark-light">-bot</span></span>
+      </a>
+      <p>Una landing de portfolio, independiente del servicio del bot.</p>
+      <span>Node.js · WhatsApp · Stickers</span>
+    </footer>
+  </body>
+</html>
