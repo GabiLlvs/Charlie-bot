@@ -19,7 +19,7 @@ const MEDIA_BATCH_MS = 900;
 const POST_CONNECT_REPLY_MS = 22_000;
 const INBOUND_TOKEN_WARM_MS = 2_000;
 
-const AUTH_FOLDER = "./auth_info";
+const AUTH_FOLDER = process.env.AUTH_FOLDER || "./auth_info";
 const EXPECTED_PHONE = (process.env.BOT_PHONE || "5492613417054").replace(/\D/g, "");
 
 const logger = pino({ level: process.env.LOG_LEVEL || "warn" });

@@ -1,0 +1,30 @@
+services:
+  charlie-bot:
+    build: .
+    image: charlie-bot:latest
+    container_name: charlie-bot
+    restart: unless-stopped
+    environment:
+      - BOT_PHONE=${BOT_PHONE:-5492613417054}
+      - LOG_LEVEL=${LOG_LEVEL:-warn}
+      - TZ=America/Argentina/Buenos_Aires
+    volumes:
+      - charlie_bot_data:/app/data
+    # El bot no expone puertos: solo abre una conexión saliente a WhatsApp.
+    read_only: true
+    tmpfs:
+      - /tmp:size=128m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 512m
+    pids_limit: 128
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+
+volumes:
+  charlie_bot_data:
