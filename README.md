@@ -4,6 +4,13 @@ Bot de stickers para WhatsApp.
 
 Recibís una **foto** o **GIF** (también video corto) y el bot responde con un **sticker** WebP 512×512.
 
+## Ramas
+
+- **`dev`**: desarrollo / test. Todas las features salen de acá y vuelven por PR.
+- **`main`**: stage / producción. Solo se actualiza desde `dev` cuando está estable.
+
+El avance se registra en [`docs/avance.md`](docs/avance.md).
+
 Pensado para el número **+54** (Argentina). La sesión se vincula escaneando un QR desde ese teléfono.
 
 ## Requisitos
