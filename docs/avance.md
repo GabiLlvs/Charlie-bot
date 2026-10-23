@@ -2,6 +2,10 @@
 
 Bitácora del proyecto (más reciente arriba). Completar en el mismo cambio que el código.
 
+## 2026-10-23
+
+- Fix: una sola respuesta por foto — solo `messages.upsert` tipo `notify` y dedupe por `key.id` (evitaba sticker doble con notify+append).
+
 ## Deuda conocida
 
 - `sticker.js` usa el binario de `ffmpeg-static`; el Dockerfile setea `FFMPEG_BIN` y omite scripts de npm. GIFs/videos en Docker pueden fallar hasta unificar la ruta de ffmpeg.

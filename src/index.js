@@ -141,6 +141,22 @@ function shouldHandleMessage(msg, media) {
 const pendingByChat = new Map();
 let processingMedia = false;
 
+/** Evita procesar el mismo mensaje en notify + append (o reenvíos duplicados). */
+const seenInboundMessageIds = new Set();
+const SEEN_MESSAGE_IDS_MAX = 500;
+
+function alreadyHandledInbound(msg) {
+  const id = msg.key?.id;
+  if (!id) return false;
+  if (seenInboundMessageIds.has(id)) return true;
+  seenInboundMessageIds.add(id);
+  if (seenInboundMessageIds.size > SEEN_MESSAGE_IDS_MAX) {
+    const oldest = seenInboundMessageIds.values().next().value;
+    seenInboundMessageIds.delete(oldest);
+  }
+  return false;
+}
+
 async function sendToChat(sock, msg, content) {
   await warmContactTokens(sock, msg);
   const candidates = getReplyJidCandidates(msg, EXPECTED_PHONE);
@@ -389,9 +405,12 @@ async function startBot() {
 
   sock.ev.on("messages.upsert", async ({ messages, type }) => {
     if (generation !== connectGeneration) return;
-    if (type !== "notify" && type !== "append") return;
+    // "append" repite mensajes ya vistos en notify → dos stickers si se procesan ambos.
+    if (type !== "notify") return;
 
     for (const msg of messages) {
+      if (alreadyHandledInbound(msg)) continue;
+
       const media = getIncomingMedia(msg);
       if (!media) continue;
       if (!shouldHandleMessage(msg, media)) continue;
