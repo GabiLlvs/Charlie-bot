@@ -17,9 +17,13 @@ RUN npm ci --omit=dev --ignore-scripts && npm cache clean --force
 # ---------- Etapa 2: runtime ----------
 FROM node:24-alpine AS runtime
 
+ARG BOT_REVISION=local
+LABEL org.opencontainers.image.revision=$BOT_REVISION
+
 RUN apk add --no-cache ffmpeg tini
 
 ENV NODE_ENV=production \
+    BOT_REVISION=$BOT_REVISION \
     FFMPEG_BIN=/usr/bin/ffmpeg \
     AUTH_FOLDER=/app/data/auth_info
 

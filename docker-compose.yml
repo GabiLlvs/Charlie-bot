@@ -1,6 +1,9 @@
 services:
   charlie-bot:
-    build: .
+    build:
+      context: .
+      args:
+        BOT_REVISION: ${BOT_REVISION:-local}
     image: charlie-bot:latest
     container_name: charlie-bot
     restart: unless-stopped

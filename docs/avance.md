@@ -2,9 +2,13 @@
 
 Bitácora del proyecto (más reciente arriba). Completar en el mismo cambio que el código.
 
-## Deuda conocida
+## 2026-10-29 — `dev`
 
-- `sticker.js` usa el binario de `ffmpeg-static`; el Dockerfile setea `FFMPEG_BIN` y omite scripts de npm. GIFs/videos en Docker pueden fallar hasta unificar la ruta de ffmpeg.
+- Rechazo de varias imágenes: texto seguido del sticker transparente de Charlie enojado, incluido en `src/assets/` y en Docker.
+- Álbumes identificados por la asociación al mensaje padre; hijos demorados y mensajes duplicados no generan stickers adicionales. Cola de procesamiento en lugar de descartar mensajes mientras el bot está ocupado.
+- Reconexiones: cancelar lotes de sockets anteriores y cerrar por SIGTERM sin desvincular, esperando el guardado de credenciales. Mantener `append` para aceptar mensajes entregados tras estar offline.
+- Docker: revisión del commit en imagen y logs, instrucciones de recreación conservando el volumen de sesión. FFmpeg respeta `FFMPEG_BIN` y maneja errores al iniciar el proceso.
+- Instalados Docker Desktop 4.97.0, Docker 29.9.2, Compose 5.6.1 y WSL 2.7.14 en Windows; motor Linux operativo tras el reinicio. Build de `charlie-bot:latest` y `docker compose config --quiet` aprobados. Las 15 pruebas pasan también dentro del contenedor, con usuario sin privilegios y filesystem read-only; conversión real de PNG, GIF y MP4 a WebP 512×512 verificada con FFmpeg. Queda pendiente el despliegue y envío real en el servidor.
 
 ## 2026-10-18 — `dev`
 

@@ -17,7 +17,7 @@ const GIF_MIMES = new Set([
 
 function runFfmpeg(args) {
   return new Promise((resolve, reject) => {
-    const bin = ffmpegPath;
+    const bin = process.env.FFMPEG_BIN || ffmpegPath;
     if (!bin) {
       reject(new Error("ffmpeg no está disponible"));
       return;
@@ -27,6 +27,7 @@ function runFfmpeg(args) {
     proc.stderr.on("data", (chunk) => {
       stderr += chunk.toString();
     });
+    proc.on("error", reject);
     proc.on("close", (code) => {
       if (code === 0) resolve();
       else reject(new Error(stderr || `ffmpeg salió con código ${code}`));
