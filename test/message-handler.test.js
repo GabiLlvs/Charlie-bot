@@ -87,11 +87,12 @@ test("una foto sigue generando su sticker", async (t) => {
   assert.equal(h.replies.length, 0);
 });
 
-test("un mensaje duplicado no cuenta como dos fotos", async (t) => {
+test("un mismo ID de notify y append no duplica stickers, incluso al reconectar", async (t) => {
   const h = setup(t);
   h.queue(photo("same"));
   h.queue(photo("same"));
   await h.flush();
+  h.reset();
   h.queue(photo("same"));
   await h.flush();
   assert.deepEqual(h.converted, ["same"]);
