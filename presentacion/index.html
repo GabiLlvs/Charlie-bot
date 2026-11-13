@@ -9,6 +9,9 @@
     >
     <meta name="theme-color" content="#f4f1e9">
     <title>Charlie-bot — De una imagen a un sticker</title>
+    <link rel="alternate" hreflang="es" href="./index.html">
+    <link rel="alternate" hreflang="en" href="./en/index.html">
+    <link rel="alternate" hreflang="x-default" href="./index.html">
     <link rel="stylesheet" href="./styles.css">
   </head>
   <body>
@@ -21,7 +24,13 @@
         <a href="#como-funciona">Cómo funciona</a>
         <a href="#detras-del-bot">Detrás del bot</a>
       </nav>
-      <span class="project-label"><span class="status-dot"></span> Proyecto personal</span>
+      <div class="header-actions">
+        <span class="project-label"><span class="status-dot"></span> Proyecto personal</span>
+        <div class="language-switch" role="group" aria-label="Idioma de la presentación">
+          <a href="./index.html" lang="es" hreflang="es" aria-label="Español" aria-current="page">ES</a>
+          <a href="./en/index.html" lang="en" hreflang="en" aria-label="English">EN</a>
+        </div>
+      </div>
     </header>
 
     <main>
@@ -34,9 +43,15 @@
             WebP listos para compartir. Le mandás el contenido por WhatsApp;
             el bot hace el resto.
           </p>
-          <a class="text-link" href="#como-funciona">
-            Conocé el proyecto <span aria-hidden="true">↓</span>
-          </a>
+          <div class="hero-actions">
+            <a class="try-button" href="https://wa.me/5492613417054" target="_blank" rel="noopener noreferrer" aria-label="Probar Charlie en WhatsApp (abre en una pestaña nueva)">
+              Probar <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#como-funciona">
+              Conocé el proyecto <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <p class="try-hint">Abrí el chat y mandale una foto por vez.</p>
           <div class="hero-meta">
             <span>Node.js</span><span>Baileys</span><span>FFmpeg</span>
           </div>
@@ -101,7 +116,7 @@
               <span class="step-number">01</span>
               <div class="step-icon icon-send" aria-hidden="true">↗</div>
               <h3>Mandá una imagen</h3>
-              <p>Enviá una foto, GIF o video corto al chat donde está el bot.</p>
+              <p>Abrí el chat de Charlie y mandale una foto, GIF o video corto, de a uno.</p>
             </article>
             <article class="step">
               <span class="step-number">02</span>
@@ -168,7 +183,7 @@
         <span class="wordmark-mark" aria-hidden="true">C</span>
         <span>charlie<span class="wordmark-light">-bot</span></span>
       </a>
-      <p>Una landing de portfolio, independiente del servicio del bot.</p>
+      <p>Conocé a Charlie. Tus stickers empiezan en WhatsApp.</p>
       <span>Node.js · WhatsApp · Stickers</span>
     </footer>
   </body>
