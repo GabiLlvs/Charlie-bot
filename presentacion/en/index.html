@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Charlie-bot turns photos, GIFs, and short videos into WhatsApp stickers. A personal project built with Node.js and Baileys."
+    >
+    <meta name="theme-color" content="#f4f1e9">
+    <title>Charlie-bot — From a photo to a sticker</title>
+    <link rel="alternate" hreflang="es" href="../index.html">
+    <link rel="alternate" hreflang="en" href="./index.html">
+    <link rel="alternate" hreflang="x-default" href="../index.html">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#inicio" aria-label="Charlie-bot, home">
+        <span class="wordmark-mark" aria-hidden="true">C</span>
+        <span>charlie<span class="wordmark-light">-bot</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#como-funciona">How it works</a>
+        <a href="#detras-del-bot">Behind the bot</a>
+      </nav>
+      <div class="header-actions">
+        <span class="project-label"><span class="status-dot"></span> Personal project</span>
+        <div class="language-switch" role="group" aria-label="Presentation language">
+          <a href="../index.html" lang="es" hreflang="es" aria-label="Español">ES</a>
+          <a href="./index.html" lang="en" hreflang="en" aria-label="English" aria-current="page">EN</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section-wrap" id="inicio">
+        <div class="hero-copy">
+          <p class="eyebrow"><span>01</span> A project for WhatsApp</p>
+          <h1>From a photo<br>to a sticker <span>with flair.</span></h1>
+          <p class="hero-intro">
+            Charlie-bot turns photos, GIFs, and short videos into WebP
+            stickers ready to share. Send your media on WhatsApp;
+            Charlie takes care of the rest.
+          </p>
+          <div class="hero-actions">
+            <a class="try-button" href="https://wa.me/5492613417054" target="_blank" rel="noopener noreferrer" aria-label="Try Charlie on WhatsApp (opens in a new tab)">
+              Try it <span aria-hidden="true">↗</span>
+            </a>
+            <a class="text-link" href="#como-funciona">
+              Explore the project <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+          <p class="try-hint">Open the chat and send one photo at a time.</p>
+          <div class="hero-meta">
+            <span>Node.js</span><span>Baileys</span><span>FFmpeg</span>
+          </div>
+        </div>
+
+        <div class="demo-stage" aria-label="Illustration of how Charlie-bot works">
+          <img
+            class="charlie-mascot"
+            src="../images/charlie-mascot.png"
+            alt="Charlie, a green creature sitting in an office chair"
+            width="768"
+            height="768"
+          >
+          <span class="mascot-caption">meet Charlie <span aria-hidden="true">↙</span></span>
+          <div class="stage-note note-top">from photo to sticker <span>✳</span></div>
+          <div class="chat-card">
+            <div class="chat-topbar">
+              <span class="chat-avatar">C</span>
+              <span><strong>Charlie-bot</strong><small>ready to create</small></span>
+              <span class="chat-menu" aria-hidden="true">···</span>
+            </div>
+            <div class="chat-body">
+              <div class="chat-date">TODAY, 10:42</div>
+              <div class="incoming-photo">
+                <div class="photo-sun"></div>
+                <div class="photo-hill hill-back"></div>
+                <div class="photo-hill hill-front"></div>
+                <div class="photo-sparkle" aria-hidden="true">✦</div>
+              </div>
+              <div class="message-time">a photo to turn into a sticker <span>10:42</span></div>
+              <div class="sticker-reply" aria-label="Created sticker: a smiling sun">
+                <svg viewBox="0 0 160 160" role="img" aria-labelledby="sticker-title">
+                  <title id="sticker-title">A smiling sun turned into a sticker</title>
+                  <g class="sun-rays" fill="#ffb84d">
+                    <path d="M75 5h10v24H75zM75 131h10v24H75zM5 75h24v10H5zM131 75h24v10h-24z"/>
+                    <path d="m25 28 7-7 17 17-7 7zM111 114l7-7 17 17-7 7zM25 132l17-17 7 7-17 17zM111 39l17-17 7 7-17 17z"/>
+                  </g>
+                  <circle cx="80" cy="80" r="49" fill="#ffd166" stroke="#23312b" stroke-width="5"/>
+                  <circle cx="64" cy="73" r="4" fill="#23312b"/>
+                  <circle cx="96" cy="73" r="4" fill="#23312b"/>
+                  <path d="M64 91q16 17 32 0" fill="none" stroke="#23312b" stroke-linecap="round" stroke-width="5"/>
+                  <path d="m42 55-8-7m84 7 8-7" fill="none" stroke="#f48668" stroke-linecap="round" stroke-width="6"/>
+                </svg>
+              </div>
+              <div class="message-time reply-time">ready to share <span>10:42</span></div>
+            </div>
+            <div class="chat-compose"><span>Message</span><span class="send-icon" aria-hidden="true">↑</span></div>
+          </div>
+          <div class="stage-note note-bottom"><span class="note-star">✳</span> 512 × 512 px</div>
+          <div class="stage-scribble" aria-hidden="true">↗</div>
+        </div>
+      </section>
+
+      <section class="process-section" id="como-funciona">
+        <div class="section-wrap">
+          <div class="section-heading">
+            <p class="eyebrow eyebrow-light"><span>02</span> Simple by design</p>
+            <h2>A message goes in.<br><span>A sticker comes back.</span></h2>
+          </div>
+          <div class="steps" aria-label="Steps to use Charlie-bot">
+            <article class="step">
+              <span class="step-number">01</span>
+              <div class="step-icon icon-send" aria-hidden="true">↗</div>
+              <h3>Send a photo</h3>
+              <p>Open Charlie's chat and send a photo, GIF, or short video, one at a time.</p>
+            </article>
+            <article class="step">
+              <span class="step-number">02</span>
+              <div class="step-icon icon-magic" aria-hidden="true">✳</div>
+              <h3>Charlie converts it</h3>
+              <p>Your media becomes a square WebP sticker, sized at 512 × 512.</p>
+            </article>
+            <article class="step">
+              <span class="step-number">03</span>
+              <div class="step-icon icon-sticker" aria-hidden="true">☺</div>
+              <h3>Get your sticker</h3>
+              <p>It comes back to the chat in seconds, ready to share.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="details-section section-wrap" id="detras-del-bot">
+        <div class="details-intro">
+          <p class="eyebrow"><span>03</span> Behind the bot</p>
+          <h2>A small project.<br><span>Real decisions.</span></h2>
+          <p>
+            A personal automation project exploring WhatsApp integration,
+            media processing, and container deployment.
+          </p>
+        </div>
+        <div class="details-grid">
+          <article class="detail-card">
+            <span class="detail-index">01 / INTEGRATION</span>
+            <h3>WhatsApp + Baileys</h3>
+            <p>A linked-device connection with a persistent session.</p>
+          </article>
+          <article class="detail-card">
+            <span class="detail-index">02 / PROCESSING</span>
+            <h3>Sharp + FFmpeg</h3>
+            <p>Photos and animated media are converted into WebP stickers.</p>
+          </article>
+          <article class="detail-card">
+            <span class="detail-index">03 / DEPLOYMENT</span>
+            <h3>Docker</h3>
+            <p>A multi-stage image, an unprivileged user, and persistent data.</p>
+          </article>
+          <article class="detail-card detail-note">
+            <span class="detail-index">PROJECT NOTE</span>
+            <p>
+              Baileys is an unofficial library. The bot processes media
+              on the server where it runs, rather than converting it
+              locally in your browser.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="closing-band">
+        <div class="section-wrap closing-content">
+          <p>Made to turn “this would make a great sticker” into reality.</p>
+          <a href="#inicio" aria-label="Back to the top">Back to top <span aria-hidden="true">↑</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer section-wrap">
+      <a class="wordmark footer-wordmark" href="#inicio">
+        <span class="wordmark-mark" aria-hidden="true">C</span>
+        <span>charlie<span class="wordmark-light">-bot</span></span>
+      </a>
+      <p>Meet Charlie. Your stickers start on WhatsApp.</p>
+      <span>Node.js · WhatsApp · Stickers</span>
+    </footer>
+  </body>
+</html>

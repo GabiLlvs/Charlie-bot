@@ -47,6 +47,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -113,6 +114,41 @@ a:focus-visible {
   align-items: center;
   gap: 8px;
   color: var(--muted);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.language-switch {
+  display: inline-flex;
+  padding: 3px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.language-switch a {
+  display: grid;
+  min-width: 44px;
+  min-height: 38px;
+  place-items: center;
+  border-radius: 5px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-decoration: none;
+}
+
+.language-switch a[aria-current="page"] {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.language-switch a:not([aria-current]):hover {
+  background: rgba(183, 217, 155, 0.3);
+  color: var(--ink);
 }
 
 .status-dot {
@@ -198,6 +234,48 @@ h1 span,
 
 .text-link span {
   font-size: 16px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.try-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  padding: 13px 24px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 3px 3px 0 var(--green);
+  transition: background 160ms ease, box-shadow 160ms ease;
+}
+
+.try-button:hover {
+  background: #3d583b;
+  box-shadow: 5px 5px 0 var(--green);
+}
+
+.try-button span {
+  color: var(--green);
+  font-size: 20px;
+}
+
+.try-hint {
+  margin: 16px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .hero-meta {
@@ -717,6 +795,18 @@ h1 span,
 }
 
 @media (max-width: 800px) {
+  .header-actions {
+    gap: 12px;
+  }
+
+  .project-label {
+    display: none;
+  }
+
+  .site-header nav {
+    gap: 18px;
+  }
+
   .hero {
     min-height: auto;
     grid-template-columns: 1fr 0.9fr;

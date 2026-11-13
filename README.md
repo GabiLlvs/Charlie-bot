@@ -69,11 +69,13 @@ BOT_PHONE=5492613417054
 
 Si ya tenés **WhatsApp Business Cloud** en Meta y n8n, podés usar el trigger **WhatsApp Trigger** + descarga de media + un servicio HTTP que ejecute esta misma lógica de conversión. Este repo es la forma más rápida de probar con tu número personal sin configurar Meta.
 
-## Landing de portfolio
+## Presentación del bot
 
-La presentación visual del proyecto está en [`portfolio/`](portfolio/), separada del bot: es HTML y CSS estáticos, no agrega dependencias y no participa del proceso de WhatsApp. Para verla, abrí `portfolio/index.html` en el navegador.
+La presentación visual del proyecto está en [`presentacion/`](presentacion/), separada del bot: es HTML y CSS estáticos, no agrega dependencias y no participa del proceso de WhatsApp. Para verla, abrí `presentacion/index.html` en el navegador.
 
-La landing es un caso de estudio del bot; no ofrece una demo conectada ni convierte imágenes en el navegador.
+Incluye una versión en [español](presentacion/index.html) y otra en [inglés](presentacion/en/index.html), con selector ES/EN en el encabezado. El botón **Probar** abre el chat de WhatsApp del bot (`https://wa.me/5492613417054`); la conversión se hace al enviarle una imagen por WhatsApp.
+
+Al publicar, la carpeta estática a servir es `presentacion/` (antes `portfolio/`). Si el proyecto de Vercel tiene configurado `portfolio` como **Root Directory**, cambialo a `presentacion` para el próximo despliegue.
 
 ## Docker
 
